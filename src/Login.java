@@ -1,36 +1,59 @@
-import javax.servlet.RequestDispatcher;
+import temp.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
- * Created by User on 27.10.2016.
+ * Created by temp.User on 27.10.2016.
  */
 public class Login extends HttpServlet {
-    Users users = new Users();
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//            User user = new User("Andrey","Megeria","mezz","mezz");
+        UsersWrapper usersWrapper = new UsersWrapper();
+//        usersWrapper.getUsers().add(user);
+//        usersWrapper.saveXML("users.xml");
+        usersWrapper.loadXML("users.xml");
+        System.out.println("Users = "+ usersWrapper.getUsers());
+//        saveTofileUsers(usersWrapper);
 
-        users.getUsers().add(new User("user","user"));
-        Thema thema = new Thema("Java EE",new User("user","user"));
-        thema.addMessage(new Message(new User("user","user"),"Hello World!!!"));
+        Forum forum = new Forum();
+
+        forum.loadXML("forum.xml");
+        HttpSession session = req.getSession();
+
+
 
 //          Проверим логин пароль
-        if (users.checkPassword(req.getParameter("name"),req.getParameter("password")))
+        if (usersWrapper.getUsers().get(0).getLogin().equals(req.getParameter("name")))
         {
-            req.setAttribute("thema",thema);
-            req.getRequestDispatcher("/forum.jsp").forward(req,resp);
+            System.out.println(">> Login correct!!!");
+           session.setAttribute("thema", forum.getThemas().get(0));
+            resp.sendRedirect("/forum.jsp");
 
 
-        } else
-//            req.getRequestDispatcher("index.jsp").forward(req,resp);
-//            req.setAttribute("login",req.getParameter("error"));
+        } else {
+            System.out.println(">> Login in correct "+ usersWrapper.getUsers().get(0).getLogin());
             resp.sendRedirect("/index.jsp?login=Access is denied");
 
+        }
+    }
+
+    public void saveTofileUsers(UsersWrapper users)
+    {
+        XMLSaver saver = new XMLSaver();
+        System.out.println(">> Save to users.xml");
+        saver.save(users,"d:\\users.xml");
     }
 
 }
