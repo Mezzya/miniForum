@@ -11,4 +11,33 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>Login</servlet-class>
     </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddMsg</servlet-name>
+        <url-pattern>/addmsg</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddMsg</servlet-name>
+        <servlet-class>AddMsg</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddThema</servlet-name>
+        <url-pattern>/addthema</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddThema</servlet-name>
+        <servlet-class>AddThema</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewThema</servlet-name>
+        <url-pattern>/viewthema</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ViewThema</servlet-name>
+        <servlet-class>ViewThema</servlet-class>
+    </servlet>
+
+
 </web-app>

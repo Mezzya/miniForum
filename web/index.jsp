@@ -9,31 +9,47 @@
 <html>
   <head>
     <title>$Title$</title>
+      <link href="forum.css" rel="stylesheet">
   </head>
   <body>
-  <b style="color: red">${param.login}</b>
 
-  <h1>Please login</h1>
-  <form action="/login" method="get">
-    <table border="1">
-     <tr>
-       <td>Login</td>
-       <td><input type="text" name="name"></td>
-     </tr>
-      <tr>
-        <td>Password</td>
-        <td><input type="password" name="password">
-        </td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><input type="submit"></td>
-      </tr>
-    </table>
+<br>
+<table align="center">
+<tr>
+    <td>
+        <h1 align="center">miniForum</h1>
 
 
-  </form>
+        <b  style="color: red">${param.error}</b>
 
-  $END$
+        <form action="/login" method="get">
+            <table align="center">
+            <caption>
+                Вход на форум
+            </caption>
+                <tr>
+                    <td>Логин</td>
+                    <td><input type="hidden" name="act" value="login">
+                        <input type="text" name="login"></td>
+                </tr>
+                <tr>
+                    <td>Пароль</td>
+                    <td><input type="password" name="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Ввойти"> <a href="reg.jsp">Регистрация</a> </td>
+                </tr>
+            </table>
+
+
+        </form>
+
+
+    </td>
+</tr>
+
+</table>
   </body>
 </html>

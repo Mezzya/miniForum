@@ -42,6 +42,28 @@ public class Forum {
             e.printStackTrace();
         }
     }
+    public Thema getThembyId(Integer id)
+    {
+      if (id<=themas.size())
+      {
+          return themas.get(id);
+      }
+      return null;
+    }
+    public Thema getThema(String title)
+    {
+        for (Thema thema: themas) {
+
+            if (thema.getTitle().equals(title))
+            {
+                return thema;
+            }
+
+        }
+        return null;
+
+
+    }
 
     public void loadXML(String source) {
         try {

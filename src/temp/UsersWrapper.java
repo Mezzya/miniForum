@@ -23,6 +23,65 @@ public class UsersWrapper {
     public UsersWrapper() {
     }
 
+
+    public boolean regNewUser(User newUser)
+    {
+        for (User user: users) {
+
+            if (user.getLogin().equals(newUser.getLogin()))
+            {
+//                Такой пользователь уще есть
+                return false;
+            }
+
+        }
+        users.add(newUser);
+
+        return true;
+    }
+
+    public boolean chekUserPwd(String login, String pwd)
+    {
+        for (User user: users) {
+
+            if ((user.getLogin().equals(login))&&(user.getPassword().equals(pwd)))
+            {
+//                Правильная комбинация
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
+
+    public boolean userLoginexist(String login)
+    {
+        for (User user: users) {
+
+            if ((user.getLogin().equals(login)))
+            {
+//                Пользователь с таким логином существует
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
+
+    public User getUser(String login)
+    {
+        for (User user: users) {
+
+            if (user.getLogin().equals(login))
+                return user;
+
+        }
+        return null;
+    }
     public ArrayList<User> getUsers() {
         return users;
     }

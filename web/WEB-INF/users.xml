@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<users>
+    <user>
+        <firstName>Andrey</firstName>
+        <lastName>Megeria</lastName>
+        <login>mezz</login>
+        <password>mezz</password>
+    </user>
+    <user>
+        <firstName>Ivanov</firstName>
+        <lastName>Ivan</lastName>
+        <login>ivan</login>
+        <password>ivan</password>
+    </user>
+    <user>
+        <firstName>Pavel</firstName>
+        <lastName>Drenin</lastName>
+        <login>pavel</login>
+        <password>pavel</password>
+    </user>
+    <user>
+        <firstName>Name</firstName>
+        <lastName>Famil</lastName>
+        <login>name</login>
+        <password>name</password>
+    </user>
+</users>

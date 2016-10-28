@@ -7,38 +7,73 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:useBean id="thema" class="temp.Thema" scope="session"/>
+<jsp:useBean id="forum" class="temp.Forum" scope="session"/>
+<jsp:useBean id="activeuser" class="temp.User" scope="session"/>
 <%
 
 %>
 
 <html>
 <head>
-    <title>Title</title>
+    <title>miniForume</title>
+    <link href="forum.css" rel="stylesheet">
 </head>
 <body>
-
-Welcome to FORUM
-
 <br>
-<br>
-<table border="1">
+<table align="center" width="80%">
     <tr>
-        <td>#</td>
-        <td>Имя темы</td>
-        <td>Количество соообщений</td>
+        <td>
+<h1 align="center">miniFORUM</h1>
+
+<br>
+Добро пожаловать на форум <b>${activeuser.firstName} ${activeuser.lastName}</b>
+
+
+
+            <table border="1" align="center" width="100%">
+    <caption>
+        Мини Форум
+    </caption>
+    <tr>
+        <th>#</th>
+        <th>Имя темы</th>
+        <th align="center">Количество<br> соообщений</th>
+        <th align="center">Автор</th>
     </tr>
-    <c:forEach var="msg" items="${thema.messages}">
+    <c:forEach var="them" items="${forum.themas}" varStatus="thema">
         <tr>
-            <td>#</td>
-            <td>${msg.text}</td>
-            <td>${msg.avtor.firstName}${msg.avtor.lastName}<br>${msg.avtor.login}</td>
+            <td><a href="/viewthema?id=${thema.count}">${thema.count}</a></td>
+            <td>${them.title}</td>
+            <td align="center">${them.messages.size()}</td>
+            <td align="center">${them.avtor.login}<br>${them.avtor.firstName} ${them.avtor.lastName}</td>
+
         </tr>
     </c:forEach>
 
 </table>
+<br><br>
+            <b  style="color: red">${param.error}</b>
+         <table width="100%">
+             <caption>
+                 Новая тема
+             </caption>
 
+             <tr>
+                 <td>
+                     <form action="/addthema" method="get">
 
+                         Введите название:<br>
+                         <input type="text" name="title" size="50">
+                         <input type="submit" value="Создать">
+                     </form>
+
+                 </td>
+             </tr>
+         </table>
+
+</td>
+    </tr>
+    </table>
 
 
 </body>

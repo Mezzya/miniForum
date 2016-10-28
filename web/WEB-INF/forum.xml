@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<forum>
+    <themas>
+        <title>JSTL, Servlet, JSP, JAXB Можно так и с ума сойти.</title>
+        <Avtor>
+            <firstName>Andrey</firstName>
+            <lastName>Megeria</lastName>
+            <login>mezz</login>
+            <password>mezz</password>
+        </Avtor>
+        <messages>
+            <Avtor>
+                <firstName>Andrey</firstName>
+                <lastName>Megeria</lastName>
+                <login>mezz</login>
+                <password>mezz</password>
+            </Avtor>
+            <Text>Стандартная библиотека тегов JSP (англ. JavaServer Pages Standard Tag Library, JSTL) — расширение спецификации JSP, добавляющее библиотеку JSP тегов для общих нужд, таких как разбор XML данных, условная обработка, создание циклов и поддержка интернационализации. JSTL — конечный результат JSR 52, разработанного в рамках процесса сообщества Java. 8 мая 2006 был выпущен релиз JSTL 1.2. JSTL является альтернативой такому виду встроенной в JSP логики, как скриплеты, то есть прямые вставки Java кода. Использование стандартизованного множества тегов предпочтительнее, поскольку получаемый код легче поддерживать и проще отделять бизнес-логику от логики отображения.</Text>
+        </messages>
+        <messages>
+            <Avtor>
+                <firstName>Ivanov</firstName>
+                <lastName>Ivan</lastName>
+                <login>ivan</login>
+                <password>ivan</password>
+            </Avtor>
+            <Text>Умный да? Википедию открыл и выделывается ))</Text>
+        </messages>
+        <messages>
+            <Avtor>
+                <firstName>Pavel</firstName>
+                <lastName>Drenin</lastName>
+                <login>pavel</login>
+                <password>pavel</password>
+            </Avtor>
+            <Text>100% Скописпастил оттуда. Я проверил ))</Text>
+        </messages>
+        <messages>
+            <Avtor>
+                <firstName>Andrey</firstName>
+                <lastName>Megeria</lastName>
+                <login>mezz</login>
+                <password>mezz</password>
+            </Avtor>
+            <Text>Возьми печеньку ))</Text>
+        </messages>
+    </themas>
+    <themas>
+        <title>Учебная литература по Java</title>
+        <Avtor>
+            <firstName>Andrey</firstName>
+            <lastName>Megeria</lastName>
+            <login>mezz</login>
+            <password>mezz</password>
+        </Avtor>
+        <messages>
+            <Avtor>
+                <firstName>Andrey</firstName>
+                <lastName>Megeria</lastName>
+                <login>mezz</login>
+                <password>mezz</password>
+            </Avtor>
+            <Text>Надо бы книжек почитать. Кто что посоветует?</Text>
+        </messages>
+        <messages>
+            <Avtor>
+                <firstName>Ivanov</firstName>
+                <lastName>Ivan</lastName>
+                <login>ivan</login>
+                <password>ivan</password>
+            </Avtor>
+            <Text>Книги для лохов. Только практика, только Говнокод. Как и этот форум ))</Text>
+        </messages>
+        <messages>
+            <Avtor>
+                <firstName>Pavel</firstName>
+                <lastName>Drenin</lastName>
+                <login>pavel</login>
+                <password>pavel</password>
+            </Avtor>
+            <Text>Есть две книги, которые стоит порекомендовать. Head First Java нестандартная, но легкочитаемая. Как и вся серия, вы можете любить её или нет (я обожаю их). Java, A Beginner's Guide более традиционная книга, которая отлично объясняет Java. После того, как вы сполна ознакомились с синтаксисом и базовыми конструкциями, я рекомендую прочитать еще одну книгу перед тем, как переходить к следующему этапу (это справедливо и для других языков программирования). Test Driven Development (автор Kent Beck) описывает технику программирования, который мы используем в EclipseSource. ИМХО TDD должна входить в курс обучения каждого программиста.</Text>
+        </messages>
+        <messages>
+            <Avtor>
+                <firstName>Andrey</firstName>
+                <lastName>Megeria</lastName>
+                <login>mezz</login>
+                <password>mezz</password>
+            </Avtor>
+            <Text>на Хабре любой почитать сможет ))</Text>
+        </messages>
+    </themas>
+    <themas>
+        <title>Барахолка</title>
+        <Avtor>
+            <firstName>Andrey</firstName>
+            <lastName>Megeria</lastName>
+            <login>mezz</login>
+            <password>mezz</password>
+        </Avtor>
+        <messages>
+            <Avtor>
+                <firstName>Andrey</firstName>
+                <lastName>Megeria</lastName>
+                <login>mezz</login>
+                <password>mezz</password>
+            </Avtor>
+            <Text>Продам движок форума. 1200уе торг</Text>
+        </messages>
+    </themas>
+    <themas>
+        <title>Давайте обсудим пневмоцылиндры</title>
+        <Avtor>
+            <firstName>Pavel</firstName>
+            <lastName>Drenin</lastName>
+            <login>pavel</login>
+            <password>pavel</password>
+        </Avtor>
+    </themas>
+    <themas>
+        <title> 	Учебная литература по Java</title>
+        <Avtor>
+            <firstName>Andrey</firstName>
+            <lastName>Megeria</lastName>
+            <login>mezz</login>
+            <password>mezz</password>
+        </Avtor>
+    </themas>
+    <themas>
+        <title>Java</title>
+        <Avtor>
+            <firstName>Andrey</firstName>
+            <lastName>Megeria</lastName>
+            <login>mezz</login>
+            <password>mezz</password>
+        </Avtor>
+    </themas>
+    <themas>
+        <title>Проверочная тема</title>
+        <Avtor>
+            <firstName>Andrey</firstName>
+            <lastName>Megeria</lastName>
+            <login>mezz</login>
+            <password>mezz</password>
+        </Avtor>
+        <messages>
+            <Avtor>
+                <firstName>Andrey</firstName>
+                <lastName>Megeria</lastName>
+                <login>mezz</login>
+                <password>mezz</password>
+            </Avtor>
+            <Text>Оппа работает&#xD;
+</Text>
+        </messages>
+        <messages>
+            <Avtor>
+                <firstName>Andrey</firstName>
+                <lastName>Megeria</lastName>
+                <login>mezz</login>
+                <password>mezz</password>
+            </Avtor>
+            <Text></Text>
+        </messages>
+    </themas>
+</forum>
