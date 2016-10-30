@@ -24,14 +24,19 @@ public class Login extends HttpServlet {
 
         String absPatch = req.getSession().getServletContext().getRealPath("/WEB-INF/");
 
-        usersWrapper.loadXML(absPatch+"users.xml");
+        usersWrapper.loadXML(absPatch+"/users.xml");
         System.out.println("Users = "+ usersWrapper.getUsers());
 
 
         Forum forum = new Forum();
 
-        forum.loadXML(absPatch+"forum.xml");
+        forum.loadXML(absPatch+"/forum.xml");
         HttpSession session = req.getSession();
+        if (req.getParameter("act")==null)
+        {
+            resp.sendRedirect("/index.jsp?error=Error. try again/");
+            return;
+        }
 
         if (req.getParameter("act").equals("new"))
         {

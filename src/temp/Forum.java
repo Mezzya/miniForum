@@ -21,6 +21,7 @@ public class Forum {
     private ArrayList<Thema> themas = new ArrayList<>();
 
     public Forum() {
+
     }
 
     public ArrayList<Thema> getThemas() {
@@ -32,6 +33,8 @@ public class Forum {
     }
 
     public void saveXML(String source) {
+
+
         try {
             JAXBContext context = JAXBContext.newInstance(this.getClass());
             Marshaller marshaller = context.createMarshaller();

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="miniForum:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/miniForum_war</output-path>
+    <root id="archive" name="miniForum_war.war">
+      <element id="artifact" artifact-name="miniForum:war exploded" />
+    </root>
+  </artifact>
+</component>

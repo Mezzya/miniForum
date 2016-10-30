@@ -18,6 +18,7 @@ public class AddMsg extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession();
+        String absPatch = req.getSession().getServletContext().getRealPath("/WEB-INF/");
 
         if ((session.getAttribute("activeuser")!=null) && (session.getAttribute("forum")!=null))
         {
@@ -43,7 +44,7 @@ public class AddMsg extends HttpServlet {
             {
                 th.addMessage(new Message((User) session.getAttribute("activeuser"),message));
 
-                forum.saveXML("d:\\forum.xml");
+                forum.saveXML(absPatch+"/forum.xml");
 //                Отправляемся назад
                 resp.sendRedirect("/thema.jsp");
 
