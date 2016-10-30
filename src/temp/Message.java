@@ -14,31 +14,44 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Message {
     @XmlElement
-    private User Avtor;
+    private User avtor;
     @XmlElement
-    private String Text;
+    private String text;
+    @XmlElement
+    private String date;
 
     public Message() {
     }
 
-    public Message(User avtor, String text) {
-        Avtor = avtor;
-        Text = text;
+    public Message(User avtor, String text, String date) {
+        this.avtor = avtor;
+        this.text = text;
+        this.date = date;
+
     }
 
-    public User getAvtor() {
-        return Avtor;
+    public synchronized User getAvtor()
+    {
+        return avtor;
     }
 
-    public void setAvtor(User avtor) {
-        Avtor = avtor;
+    public synchronized void setAvtor(User avtor)
+    {
+        this.avtor = avtor;
     }
 
-    public String getText() {
-        return Text;
+    public synchronized String getText()
+    {
+        return text;
     }
 
-    public void setText(String text) {
-        Text = text;
+    public synchronized void setText(String text)
+    {
+        this.text = text;
+    }
+
+    public synchronized String getDate()
+    {
+        return date;
     }
 }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -19,7 +20,7 @@ public class AddThema extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession();
-        String absPatch = req.getSession().getServletContext().getRealPath("/WEB-INF/");
+        String absPatch = req.getSession().getServletContext().getRealPath("/WEB-INF/")+ File.separator;
 
         if ((session.getAttribute("activeuser")!=null) && (session.getAttribute("forum")!=null))
         {
@@ -50,7 +51,7 @@ public class AddThema extends HttpServlet {
             Thema thema = new Thema(title,(User) session.getAttribute("activeuser"));
 //            Сохраняем
             forum.getThemas().add(thema);
-            forum.saveXML(absPatch+"/forum.xml");
+            forum.saveXML(absPatch+"forum.xml");
             System.out.println(">> Сохраняем форум в XML");
             resp.sendRedirect("/forum.jsp");
 

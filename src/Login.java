@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sound.midi.Patch;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,15 +24,15 @@ public class Login extends HttpServlet {
 
         UsersWrapper usersWrapper = new UsersWrapper();
 
-        String absPatch = req.getSession().getServletContext().getRealPath("/WEB-INF/");
+        String absPatch = req.getSession().getServletContext().getRealPath("/WEB-INF/")+ File.separator;
 
-        usersWrapper.loadXML(absPatch+"/users.xml");
+        usersWrapper.loadXML(absPatch+"users.xml");
         System.out.println("Users = "+ usersWrapper.getUsers());
 
 
         Forum forum = new Forum();
 
-        forum.loadXML(absPatch+"/forum.xml");
+        forum.loadXML(absPatch+"forum.xml");
         HttpSession session = req.getSession();
         if (req.getParameter("act")==null)
         {
@@ -111,13 +113,6 @@ public class Login extends HttpServlet {
         }
 
 
-    }
-
-    public void saveTofileUsers(UsersWrapper users)
-    {
-        XMLSaver saver = new XMLSaver();
-        System.out.println(">> Save to users.xml");
-        saver.save(users,"d:\\users.xml");
     }
 
 }

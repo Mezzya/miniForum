@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by andre on 10/28/2016.
@@ -18,13 +20,13 @@ import java.util.ArrayList;
 @XmlRootElement(name = "users")
 public class UsersWrapper {
     @XmlElement(name = "user")
-    private ArrayList<User> users = new ArrayList<>();
+    private List<User> users = Collections.synchronizedList(new ArrayList<>());
 
     public UsersWrapper() {
     }
 
 
-    public boolean regNewUser(User newUser)
+    public synchronized boolean regNewUser(User newUser)
     {
         for (User user: users) {
 
@@ -40,7 +42,7 @@ public class UsersWrapper {
         return true;
     }
 
-    public boolean chekUserPwd(String login, String pwd)
+    public synchronized boolean chekUserPwd(String login, String pwd)
     {
         for (User user: users) {
 
@@ -56,7 +58,7 @@ public class UsersWrapper {
 
     }
 
-    public boolean userLoginexist(String login)
+    public synchronized boolean userLoginexist(String login)
     {
         for (User user: users) {
 
@@ -72,7 +74,7 @@ public class UsersWrapper {
 
     }
 
-    public User getUser(String login)
+    public synchronized User getUser(String login)
     {
         for (User user: users) {
 
@@ -82,16 +84,17 @@ public class UsersWrapper {
         }
         return null;
     }
-    public ArrayList<User> getUsers() {
+
+    public synchronized List<User> getUsers() {
         return users;
     }
 
 
-    public void setUsers(ArrayList<User> users) {
+    public synchronized void setUsers(ArrayList<User> users) {
         this.users = users;
     }
 
-    public void saveXML( String source) {
+    public synchronized void saveXML( String source) {
         try {
             JAXBContext context = JAXBContext.newInstance(this.getClass());
             Marshaller marshaller = context.createMarshaller();
@@ -103,7 +106,7 @@ public class UsersWrapper {
         }
     }
 
-    public void loadXML(String source)
+    public synchronized void loadXML(String source)
     {
         try {
             JAXBContext context = JAXBContext.newInstance(this.getClass());

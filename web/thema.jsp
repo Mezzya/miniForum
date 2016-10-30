@@ -26,7 +26,7 @@
             <h1 align="center">miniFORUM</h1>
 
             <br>
-            Добро пожаловать на форум <b>${activeuser.firstName} ${activeuser.lastName}</b>
+            Добро пожаловать на форум <b>${activeuser.firstName} ${activeuser.lastName}</b>, <a href="index.jsp">Выйти</a>
 
 
 
@@ -37,15 +37,16 @@
                 <tr>
                     <th>#</th>
                     <th>${thema.title}</th>
+                    <th>Время написания</th>>
 
                     <th align="center">${thema.avtor.login}</th>
                 </tr>
                 <c:forEach var="msg" items="${thema.messages}" varStatus="thema">
                     <tr>
                         <td>${thema.count}</td>
-                        <td>${msg.text}</td>
-
-                        <td align="center">${msg.avtor.login}<br>${msg.avtor.firstName} ${msg.avtor.lastName}</td>
+                        <td width="100%">${msg.text}</td>
+                        <td>${msg.date}</td>
+                        <td align="center">${msg.avtor.login}<br>${msg.avtor.firstName} ${msg.avtor.lastName}<br>${msg.avtor.colMsgplus()}</td>
 
                     </tr>
                 </c:forEach>

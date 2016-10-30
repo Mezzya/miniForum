@@ -16,7 +16,8 @@ public class User {
     private String firstName;
     @XmlElement
     private String lastName;
-
+    @XmlElement
+    private int colMsg;
     @XmlElement
     private String login;
     @XmlElement
@@ -30,38 +31,42 @@ public class User {
         this.lastName = lastName;
         this.login = login;
         this.password = password;
+        this.colMsg=0;
     }
 
-    public String getFirstName() {
+    public synchronized String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public synchronized void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    public synchronized String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public synchronized void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public String getLogin() {
+    public synchronized String getLogin() {
         return login;
     }
 
-    public void setLogin(String login) {
+    public synchronized void setLogin(String login) {
         this.login = login;
     }
 
-    public String getPassword() {
+    public synchronized String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public synchronized void setPassword(String password) {
         this.password = password;
     }
-
+    public synchronized void colMsgplus()
+    {
+        colMsg++;
+    }
 }

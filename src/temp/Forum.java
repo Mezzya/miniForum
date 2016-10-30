@@ -11,6 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.File;
 import java.util.ArrayList;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by andre on 10/28/2016.
  */
@@ -18,22 +21,20 @@ import java.util.ArrayList;
 @XmlRootElement
 public class Forum {
     @XmlElement
-    private ArrayList<Thema> themas = new ArrayList<>();
+    private List<Thema> themas = Collections.synchronizedList(new ArrayList<>());
 
     public Forum() {
 
     }
 
-    public ArrayList<Thema> getThemas() {
+    public synchronized List<Thema> getThemas()
+    {
         return themas;
     }
 
-    public void setThemas(ArrayList<Thema> themas) {
-        this.themas = themas;
-    }
 
-    public void saveXML(String source) {
-
+    public synchronized void saveXML(String source) {
+        System.out.println(">> SAVE to "+source);
 
         try {
             JAXBContext context = JAXBContext.newInstance(this.getClass());
@@ -45,7 +46,7 @@ public class Forum {
             e.printStackTrace();
         }
     }
-    public Thema getThembyId(Integer id)
+    public synchronized Thema getThembyId(Integer id)
     {
       if (id<=themas.size())
       {
@@ -53,7 +54,7 @@ public class Forum {
       }
       return null;
     }
-    public Thema getThema(String title)
+    public synchronized Thema getThema(String title)
     {
         for (Thema thema: themas) {
 
@@ -68,7 +69,8 @@ public class Forum {
 
     }
 
-    public void loadXML(String source) {
+    public synchronized void loadXML(String source) {
+        System.out.println(">> LOAD from "+source);
         try {
             JAXBContext context = JAXBContext.newInstance(this.getClass());
             Unmarshaller unmarshaller = context.createUnmarshaller();
